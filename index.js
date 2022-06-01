@@ -1,10 +1,10 @@
 //add input questions
 const inquirer = require('inquirer');
-const Manager = require('./lib.Manager.js');
-const Intern = require('./Intern.js');
-const Engineer = require('./Engineer.js');
+const Manager = require('./lib/Manager.js');
+const Intern = require('./lib/Intern.js');
+const Engineer = require('./lib/Engineer.js');
 const fs = require('fs');
-const generatemarkdown = require('./dist.generatmarkdown.js');
+const generatemarkdown = require('./dist/generatemarkdown.js');
 const teamMember = [];
 
 const promptManager = () => {
@@ -41,21 +41,24 @@ const promptManager = () => {
 
     ])
         .then(answers => {
-            console.log(answers);
             const manager = new Manager(answers.name, answers.employeeNumber, answers.email, answers.officeNumber)
             teamMember.push(manager);
+            console.log(teamMember)
             choiceMenu();
         })
 
 
 };
+promptManager()
 
 const choiceMenu = () => {
     return inquirer.prompt([
         {
-            input: 'list',
+            type: 'list',
             message: 'Please choose an option from the following:',
-            choices: ['Add engineer', 'Add intern', 'Done',]
+            name:'menu',
+            choices: ['Add Engineer', 'Add Intern', 'Done'],
+           
 
         }
     ])
@@ -69,12 +72,15 @@ const choiceMenu = () => {
                     promptIntern();
                     break;
                 default:
-                    doneWithTeam();
+                    teamBuilder();
+                    break
 
 
             }
         })
-}
+};
+//choiceMenu()
+
 const promptEngineer = () => {
     console.log('Add Engineer');
 
@@ -113,6 +119,7 @@ const promptEngineer = () => {
         choiceMenu(); 
     })    
 };
+//promptEngineer()
 
 const promptIntern = () => {
     console.log('Add Intern');
@@ -151,9 +158,13 @@ const promptIntern = () => {
     })    
 
 };
+//promptIntern()
 
 const teamBuilder = () => {
     console.log('Team Completed')
+    console.log(teamMember)
+    fs.writeFileSync('./output/team.html',generatemarkdown(teamMember))
 };
+//teamBuilder()
 //How do I code for the output???
 

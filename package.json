@@ -1,0 +1,27 @@
+{
+  "name": "team-pineapple-on-pizza",
+  "version": "1.0.0",
+  "description": "Team Generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tderraco/Team-Pineapple-On-Pizza.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tderraco/Team-Pineapple-On-Pizza/issues"
+  },
+  "homepage": "https://github.com/tderraco/Team-Pineapple-On-Pizza#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^28.1.0"
+  }
+}
