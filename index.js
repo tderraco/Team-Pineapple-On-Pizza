@@ -56,9 +56,9 @@ const choiceMenu = () => {
         {
             type: 'list',
             message: 'Please choose an option from the following:',
-            name:'menu',
+            name: 'menu',
             choices: ['Add Engineer', 'Add Intern', 'Done'],
-           
+
 
         }
     ])
@@ -87,37 +87,37 @@ const promptEngineer = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            message: 'Would you like to add an Engineer?',
+            message: 'What is the name of the Engineer?',
             name: 'name',
-            validate:  value => { if (value) { return true } else { return 'Please enter your name.'}}
+            validate: value => { if (value) { return true } else { return 'Please enter your name.' } }
         },
         {
             type: 'input',
-            message: 'What is your Employee number?',
+            message: 'What is their Employee number?',
             name: 'employeeNumber',
             validate: value => { if (value) { return true } else { return 'Please enter your Employee number.' } }
         },
         {
             type: 'input',
-            message: 'Please enter your email',
+            message: 'Please enter their email',
             name: 'email',
             validate: value => { if (value) { return true } else { return 'Please enter your email.' } }
         },
         {
             type: 'input',
-            message: 'Please enter your Github username',
+            message: 'Please enter their Github username',
             name: 'gitHub',
             validate: value => { if (value) { return true } else { return 'Please enter your Github usrename.' } }
         }
 
 
     ])
-    .then (answers => {
-        console.log(answers);
-        const engineer = new Engineer(answers.name, answers.employeeNumber, answers.email, answers.gitHub)
-        teamMember.push(engineer);
-        choiceMenu(); 
-    })    
+        .then(answers => {
+            console.log(answers);
+            const engineer = new Engineer(answers.name, answers.employeeNumber, answers.email, answers.gitHub)
+            teamMember.push(engineer);
+            choiceMenu();
+        })
 };
 //promptEngineer()
 
@@ -127,35 +127,35 @@ const promptIntern = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            message: 'Would you like to add an Intern?',
+            message: 'What is the name of the Intern?',
             name: 'name',
-            validate:  value => { if (value) { return true } else { return 'Please enter your name.'}}
+            validate: value => { if (value) { return true } else { return 'Please enter your name.' } }
         },
         {
             type: 'input',
-            message: 'What is your Employee number?',
+            message: 'What is their Employee number?',
             name: 'employeeNumber',
             validate: value => { if (value) { return true } else { return 'Please enter your Employee number.' } }
         },
         {
             type: 'input',
-            message: 'Please enter your email',
+            message: 'Please enter their email',
             name: 'email',
             validate: value => { if (value) { return true } else { return 'Please enter your email.' } }
         },
         {
             type: 'input',
-            message: 'Please enter your School name',
+            message: 'Please enter their School name',
             name: 'school',
             validate: value => { if (value) { return true } else { return 'Please enter your school name.' } }
         }
     ])
-    .then (answers => {
-        console.log(answers);
-        const intern = new Intern(answers.name, answers.employeeNumber, answers.email, answers.school)
-        teamMember.push(intern);
-        choiceMenu(); 
-    })    
+        .then(answers => {
+            console.log(answers);
+            const intern = new Intern(answers.name, answers.employeeNumber, answers.email, answers.school)
+            teamMember.push(intern);
+            choiceMenu();
+        })
 
 };
 //promptIntern()
@@ -163,7 +163,7 @@ const promptIntern = () => {
 const teamBuilder = () => {
     console.log('Team Completed')
     console.log(teamMember)
-    fs.writeFileSync('./output/team.html',generatemarkdown(teamMember))
+    fs.writeFileSync('./output/team.html', generatemarkdown(teamMember))
 };
 //teamBuilder()
 //How do I code for the output???

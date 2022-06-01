@@ -15,4 +15,20 @@ describe('test manager', ()=>{
     it ('officeNumber', () => {
         expect (manager.officeNumber).toBe(1234)
     })
-})
+});
+describe('test to see if we can get name from getname()', () => {
+    expect(manager.getName().toBe('Tracy'));
+});
+
+describe('test to see if we can get the employee id from the getId()', () => {
+    expect(manager.getId().tobe(1234));   
+});
+
+describe('test to see if we can get the office number from the getofficeNumber()', () => {
+    expect(manager.getOfficeNumber.toBe(1234));
+});
+describe('test to see if we can get manager from the getRole()', () => {
+    expect(manager.getRole().toBe('Manager'));
+});
+
+
