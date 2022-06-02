@@ -40,8 +40,8 @@ function managerCard(manager) {
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Employee ID:${manager.id}</li>
-      <li class="list-group-item">Email:${manager.email}</li>
-      <li class="list-group-item">Office Number:${manager.email}</li>
+      <li class="list-group-item">Email:<span id="email"><a href="mailto:${manager.email}">${manager.email}</a></span></li>
+      <li class="list-group-item">Office Number:${manager.officeNumber}</li>
     </ul>
     <div class="card-body">
      
@@ -56,8 +56,8 @@ function engineerCard(engineer) {
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Employee ID:${engineer.id}</li>
-      <li class="list-group-item">Email:${engineer.email}</li>
-      <li class="list-group-item">GitHub name:${engineer.github}</li>
+      <li class="list-group-item">Email:<span id="email"><a href="mailto:${engineer.email}">${engineer.email}</a></span></li>
+      <li class="list-group-item">GitHub:<a target="_blank" href="https://github.com/${engineer.github}">${engineer.github}</a></li>
     </ul>
     <div class="card-body">
     
@@ -71,9 +71,9 @@ function internCard(intern) {
       <p class="card-text">Intern</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Employee ID:${intern.id}</li>
-      <li class="list-group-item">Email${intern.email}</li>
-      <li class="list-group-item">School:${intern.school}</li>
+      <li class="list-group-item">Employee ID: ${intern.id}</li>
+      <li class="list-group-item">Email:<span id="email"><a href="mailto:${intern.email}">${intern.email}</a></span></li>
+      <li class="list-group-item">School: ${intern.school}</li>
     </ul>
     <div class="card-body">
      
