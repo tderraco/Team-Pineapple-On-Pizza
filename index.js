@@ -107,7 +107,7 @@ const promptEngineer = () => {
             type: 'input',
             message: 'Please enter their Github username',
             name: 'gitHub',
-            validate: value => { if (value) { return true } else { return 'Please enter your Github usrename.' } }
+            validate: value => { if (value) { return true } else { return 'Please enter your Github username.' } }
         }
 
 
