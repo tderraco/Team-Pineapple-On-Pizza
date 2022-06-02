@@ -1,4 +1,4 @@
-const Manager = require('../lib/Manger.js')
+const Manager = require('../lib/Manager.js')
 describe('test manager', ()=>{
     const manager = new Manager('Tracy', 1234, 'ecert31@gmail.com')
     it ('name',() => {

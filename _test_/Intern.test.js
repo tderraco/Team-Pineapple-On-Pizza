@@ -1,6 +1,6 @@
 const Intern = require('../lib/Intern.js')
 describe('test intern', ()=>{
-    const intern = new Intern('Tracy', 1234, 'ecert31@gmail.com')
+    const intern = new Intern('Tracy', 1234, 'ecert31@gmail.com', 'ucsd', 'Intern')
     it ('name',() => {
         expect(intern.name).toBe(Tracy)
 
@@ -12,7 +12,7 @@ describe('test intern', ()=>{
         expect (intern.email).toBe('ecert31@gmail.com')
 
     })
-    it ('officeNumber', () => {
+    it ('school', () => {
         expect (intern.school).toBe(1234)
     })
 });
@@ -25,7 +25,7 @@ describe('test to see if we can get the employee id from the getId()', () => {
     expect(intern.getId().tobe(1234));   
 });
 
-describe('test to see if we can get the office number from the getofficeNumber()', () => {
+describe('test to see if we can get the school name', () => {
     expect(intern.getSchool.toBe(UCSD));
 });
 describe('test to see if we can get Intern from the getRole()', () => {

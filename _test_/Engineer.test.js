@@ -29,10 +29,10 @@ describe('test to see if we can get the employee id from the getId()', () => {
 });
 
 describe('test to see if we can get the office number from the getGitHub()', () => {
-    expect(engineer.gitHub.toBe(1234));
+    expect(engineer.gitHub().toBe('tderraco'));
 });
 describe('test to see if we can get manager from the getRole()', () => {
-    expect(engineer.getRole().toBe('Engineer'));
+    expect(engineer.getRole().toBe('engineer'));
 });
 
 
